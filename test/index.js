@@ -8,14 +8,14 @@ test('github user', t => {
   github('GET', '/users/mstdokumaci')
     .then(resp => {
       t.equals(resp.login, 'mstdokumaci', 'correct username')
-      return github('GET', '/users/mstdokumaci')
+      return github('GET', '/users/mstdokumaci/followers')
     })
     .then(resp => {
-      t.equals(resp.login, 'mstdokumaci', 'correct username')
-      return github('GET', '/users/mstdokumaci')
+      t.equals(resp.constructor, Array, 'correct response type')
+      return github('GET', '/users/mstdokumaci/following')
     })
     .then(resp => {
-      t.equals(resp.login, 'mstdokumaci', 'correct username')
+      t.equals(resp.constructor, Array, 'correct response type')
       t.end()
     })
 })
