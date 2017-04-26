@@ -14,3 +14,16 @@ npm install api-promise --save
 ```
 
 ## Usage
+
+```js
+const ap = require('api-promise')
+const github = ap('api.github.com', 'GITHUB-TOKEN')
+
+github('POST', '/some/api/path', { param: 'value' })
+  .then(res => {
+    // do something with the response
+  })
+  .catch(err => {
+    // do something with the error
+  })
+```
