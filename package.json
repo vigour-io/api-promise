@@ -1,6 +1,6 @@
 {
   "name": "api-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An observable to run async tasks in parallel with a concurrency limit",
   "main": "./lib",
   "scripts": {
